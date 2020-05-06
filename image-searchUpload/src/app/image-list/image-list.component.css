@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:500i');
+
+.navbar {
+    background:  hsl(197, 100%, 40%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Asap', sans-serif;
+    background:silver;
+}
+
+.search{
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background:paleturquoise;
+    height: 25px;
+    
+    color:rgba(3, 13, 26, 0.76);
+    font-size: 15px;
+}
+.searchButton{
+    border: none;
+    outline: none;
+    height: 20px;
+    width:80px;
+    background:  hsl(197, 100%, 40%);
+    color: black;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.box {
+    background: black;
+    color: #fff;
+    top: 18%;
+    left: 8%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 3px 2px;
+    border-radius: 7%;
+}
+.searchButton:hover {
+    cursor: pointer;
+    background:gold;
+    color: black;
+   
+    transition-timing-function: ease-in-out;
+}

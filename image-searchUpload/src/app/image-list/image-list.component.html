@@ -1,0 +1,43 @@
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <span class="strong" class="navbar-brand" style="color: black">WELCOME TO MySearchEngine</span>
+      </div>
+    </div>
+  </nav>
+  <mat-card>
+    <mat-form-field class="box">
+      <input type="text" class="search" matInput [(ngModel)]="searchQuery" name="search">
+    </mat-form-field>
+    <br>
+    <input (click)="searchImages(searchQuery)" mat-raised-button class="searchButton" type="button" value="find Items">
+    <input (click)="researchImages()" mat-raised-button class="searchButton" type="button" value="history">
+  </mat-card>
+  <mat-card>
+    <div *ngIf="imagesFound">
+      <h3>Results</h3>
+      <ngx-masonry>
+        <div ngxMasonryItem class="masonry-item" *ngFor="let image of images">
+          <mat-card>
+            <img mat-card-image src="{{image.webformatURL}}">
+          </mat-card>
+          <br><br>
+        </div>
+      </ngx-masonry>
+    </div>
+  </mat-card>
+  <mat-card>
+    <div *ngIf="research">
+      <h3>History</h3>
+      <ngx-masonry>
+        <div ngxMasonryItem class="masonry-item" *ngFor="let k of list ">
+          <mat-card>
+            <img mat-card-image src="{{ k }}">
+          </mat-card>
+          <br><br>
+        </div>
+      </ngx-masonry>
+    </div>
+  </mat-card>
+</body>
