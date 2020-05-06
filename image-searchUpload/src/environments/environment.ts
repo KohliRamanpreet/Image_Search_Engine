@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL:"https://pixabay.com/api/?key=16394305-57e8f2b9fdab0f6afee34fb43",
+  API_URL:"https://pixabay.com/api/?key=",
 };
 
 /*
