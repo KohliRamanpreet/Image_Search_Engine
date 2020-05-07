@@ -6,38 +6,80 @@
       </div>
     </div>
   </nav>
+  
   <mat-card>
-    <mat-form-field class="box">
-      <input type="text" class="search" matInput [(ngModel)]="searchQuery" name="search">
-    </mat-form-field>
-    <br>
-    <input (click)="searchImages(searchQuery)" mat-raised-button class="searchButton" type="button" value="find Items">
-    <input (click)="researchImages()" mat-raised-button class="searchButton" type="button" value="history">
+    <div class="box">
+      <input type="text" class="search"  [(ngModel)]="searchQuery" name="search">
+      <br>
+    <input (click)="searchImages(searchQuery)"  class="searchButton" type="button" value="Search">
+    <input (click)="researchImages()" class="searchButton" type="button" value="History">
+    </div>
   </mat-card>
-  <mat-card>
+
+  
     <div *ngIf="imagesFound">
       <h3>Results</h3>
-      <ngx-masonry>
-        <div ngxMasonryItem class="masonry-item" *ngFor="let image of images">
-          <mat-card>
-            <img mat-card-image src="{{image.webformatURL}}">
-          </mat-card>
-          <br><br>
+     <div class="container">
+        <div class="gallery"  >
+          <figure class="gallery__item gallery__item--1">
+            <a href="{{ images[0].pageURL }}" target="_bank">
+            <img src="{{images[0].webformatURL}}" class="gallery__img">
+            </a>
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <a href="{{ images[1].pageURL }}" target="_bank">
+          <img src="{{images[1].webformatURL}}" class="gallery__img">
+          </a>
+      </figure>
+      <figure class="gallery__item gallery__item--3">
+        <a href="{{ images[2].pageURL }}" target="_bank">
+        <img src="{{images[2].webformatURL}}" class="gallery__img">
+        </a>
+    </figure>
+    <figure class="gallery__item gallery__item--4">
+      <a href="{{ images[3].pageURL }}" target="_bank">
+      <img src="{{images[3].webformatURL}}" class="gallery__img">
+      </a>
+  </figure>
+  <figure class="gallery__item gallery__item--5">
+    <a href="{{ images[4].pageURL }}" target="_bank">
+    <img src="{{images[4].webformatURL}}" class="gallery__img">
+    </a>
+</figure>
+<figure class="gallery__item gallery__item--6">
+  <a href="{{ images[5].pageURL }}" target="_bank">
+  <img src="{{images[5].webformatURL}}" class="gallery__img">
+  </a>
+</figure>
+<figure class="gallery__item gallery__item--7">
+  <a href="{{ images[6].pageURL }}" target="_bank">
+  <img src="{{images[6].webformatURL}}" class="gallery__img">
+  </a>
+</figure>
+<figure class="gallery__item gallery__item--8">
+  <a href="{{ images[7].pageURL }}" target="_bank">
+<img src="{{images[7].webformatURL}}" class="gallery__img">
+</a>
+</figure>
+<figure class="gallery__item gallery__item--9">
+  <a href="{{ images[8].pageURL }}" target="_bank">
+  <img src="{{images[8].webformatURL}}" class="gallery__img">
+  </a>
+</figure>
+<figure class="gallery__item gallery__item--10">
+  <a href="{{ images[9].pageURL }}" target="_bank">
+<img src="{{images[9].webformatURL}}" class="gallery__img">
+</a>
+</figure>
+         </div>
         </div>
-      </ngx-masonry>
     </div>
-  </mat-card>
-  <mat-card>
     <div *ngIf="research">
       <h3>History</h3>
-      <ngx-masonry>
-        <div ngxMasonryItem class="masonry-item" *ngFor="let k of list ">
-          <mat-card>
-            <img mat-card-image src="{{ k }}">
-          </mat-card>
-          <br><br>
+      <div class="row">
+        <div class="column" *ngFor="let k of list ">
+            <img  src="{{ k }}" si >
         </div>
-      </ngx-masonry>
     </div>
-  </mat-card>
+    </div>
 </body>
